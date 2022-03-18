@@ -43,13 +43,16 @@ const Home: FunctionComponent<Props> = (props) => {
             <Head>
                 <title>Routes</title>
             </Head>
-
+            <ColorModeContext.Provider value={colorMode}>
+                <ThemeProvider theme={theme}>
                     <React.StrictMode>
                         <CssBaseline/>
                         <NavBar colorMode={colorMode} mode={mode} theme={theme}/>
                         <Rides/>
                     </React.StrictMode>
-                </>
+                </ThemeProvider>
+            </ColorModeContext.Provider>
+        </>
     );
 };
 
