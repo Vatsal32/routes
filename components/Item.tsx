@@ -20,7 +20,6 @@ const Item: FunctionComponent<Props> = (props) => {
             justifyContent: 'center',
             minWidth: '100%',
             px: 3, py: 2, m: 2,
-            bgcolor: '#292929'
         }}>
             <CardMedia sx={{flexGrow: 0, height: '148px', width: '296px',}}
                 component="img"
