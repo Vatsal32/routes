@@ -19,9 +19,9 @@ const Home: FunctionComponent<Props> = (props) => {
 
     const [mode, setMode] = useState<'light' | 'dark'>('light');
 
-    useEffect(() => {
+    /*useEffect(() => {
         setMode(localStorage.getItem('theme') as 'light' | 'dark');
-    }, []);
+    }, []);*/
 
     const theme = useMemo(() => createTheme({
         palette: {
