@@ -17,10 +17,10 @@ type Props = OwnProps;
 
 const Home: FunctionComponent<Props> = (props) => {
 
-    const [mode, setMode] = useState<PaletteMode>('light');
+    const [mode, setMode] = useState<'light' | 'dark'>('light');
 
     useEffect(() => {
-        setMode(localStorage.getItem('theme') as PaletteMode);
+        setMode(localStorage.getItem('theme') as 'light' | 'dark');
     }, []);
 
     const theme = useMemo(() => createTheme({
@@ -32,7 +32,7 @@ const Home: FunctionComponent<Props> = (props) => {
     const colorMode = useMemo(() => ({
         toggleColorMode: () => {
             localStorage.setItem('theme', mode === 'light' ? 'dark' : 'light');
-            setMode((prevMode: PaletteMode) =>
+            setMode((prevMode: 'light' | 'dark') =>
                 prevMode === 'light' ? 'dark' : 'light'
             )
         }
